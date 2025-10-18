@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0b0b1a, #000000);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.contenedor {
+  max-width: 1300px;
+  margin: auto;
+  background: linear-gradient(145deg, #111122, #1a0a2a);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0,255,255,0.3);
+}
+
+/* ===== Título principal ===== */
+h1 {
+  font-size: 3em;
+  color: #ffffff; /* Blanco sólido */
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #1100ff, 0 0 15px #2f00ff; /* Halo azul definido */
+}
+
+/* ===== Barra superior ===== */
+.barra_superior {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.6em;
+  margin-bottom: 25px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 6px #1100ff; /* Halo azul para legibilidad */
+}
+
+/* Contenedor de imágenes */
+.contenedor_imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.image-box img:hover {
+  transform: none; /* Imagen fija */
+  box-shadow: 0 0 25px rgba(0,255,255,0.2); /* Mantiene sombra suave pero sin resplandor */
+}
+
+
+/* ===== Marcadores rojos ===== */
+.marks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.mark {
+  position: absolute;
+  border: 5px solid #ff0000; /* Rojo brillante */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: markPulse 0.8s ease infinite alternate;
+}
+
+@keyframes markPulse {
+  from { box-shadow: 0 0 10px #ff0000; }
+  to { box-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000; }
+}
+
+/* ===== Mensaje de victoria/derrota ===== */
+#message {
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: white;
+  text-shadow: 0 0 8px #ff00dd, 0 0 15px #f700ff;
+}
+
+/* ===== Responsividad ===== */
+@media (max-width: 768px) {
+  .contenedor_imagenes { flex-direction: column; }
+  .contenedor { padding: 20px; }
+  h1 { font-size: 2.2em; }
+  .barra_superior { font-size: 1.3em; }
+}
+
+
+
